@@ -19,13 +19,16 @@ public class ProductController {
     }
     public Mono<ResponseEntity> createProduct(ProductDto productDto){
         Product product = new Product();
-       product.setUser(productDto.getUser());
-       product.setType(productDto.getType());
-       product.setName(productDto.getName());
-       product.setActive(productDto.isActive());
-       product.setData(productDto.getData());
+        product.setActive(product.getActive());
+        product.setName(product.getUser());
+        product.setData(product.getData());
+        product.setType(product.getType());
+        product.setUser(product.getUser());
+        product.setId(product.getId());
+
        return this.productRepository.save(product).map(calback ->{
            return new ResponseEntity("\" product created\"", HttpStatus.CREATED);
        }).onErrorReturn(new ResponseEntity("\" product not created\"", HttpStatus.NOT_ACCEPTABLE));
     }
+
 }

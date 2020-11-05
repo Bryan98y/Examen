@@ -1,4 +1,4 @@
-package com.rafael.webflux.WebFlux;
+package com.bryan.webflux.Webflux;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

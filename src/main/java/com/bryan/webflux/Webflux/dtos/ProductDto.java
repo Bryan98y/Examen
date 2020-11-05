@@ -3,30 +3,37 @@ package com.bryan.webflux.Webflux.dtos;
 import com.bryan.webflux.Webflux.documents.Product;
 
 public class ProductDto {
-    private String id;
+    private Long id;
     private String name,type,user;
-    private boolean active;
+    private Boolean active;
     private  int data;
 
-    public ProductDto(String id, String name, String type, String user, String active, String data) {
-    }
 
-
-    public ProductDto(String id, String name, String type, String user, boolean active, int data) {
-        this.id = id;
+    public ProductDto(Long id, String name, String type, String user, boolean active, int data) {
+        this.id=id;
         this.name = name;
         this.type = type;
         this.user = user;
         this.active = active;
         this.data = data;
     }
+    public ProductDto(Product product){
 
+        this(
+                product.getId(),
+                product.getName(),
+                product.getType(),
+                product.getUser(),
+                product.getActive(),
+                product.getData()
+        );
+    }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -54,11 +61,11 @@ public class ProductDto {
         this.user = user;
     }
 
-    public boolean isActive() {
+    public Boolean getActive() {
         return active;
     }
 
-    public void setActive(boolean active) {
+    public void setActive(Boolean active) {
         this.active = active;
     }
 

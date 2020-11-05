@@ -6,9 +6,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document
 public class Product {
     @Id
-    private long id ;
+    private Long id ;
     private String name,type,user;
-    private boolean active;
+    private Boolean active;
     private  int data;
 
     public Product() {
@@ -47,7 +47,7 @@ public class Product {
         this.user = user;
     }
 
-    public boolean isActive() {
+    public boolean getActive() {
         return active;
     }
 
